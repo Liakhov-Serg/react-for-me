@@ -1,8 +1,31 @@
-import React from 'react';
+// import React from 'react';
+import ReactDOM from 'react-dom';
 
-const element = React.createElement(`div`, { a: 5, b: 10 }, `Привіт мир`);
+const data =  {
+  "id" : " id-1 " ,
+  "url" : " https://cdn.pixabay.com/photo/2017/07/31/22/05/feathers-2561511_1280.jpg " ,
+  "title" : " Пір'я. Анотація " ,
+  "ціна" : 500 ,
+  "автор" : {
+    "tag" : " ractapopulous " ,
+    "url" : " https://pixabay.com/users/ractapopulous-24766/ "
+  },
+  "кількість" : 10
+};
 
-console.log(element);
+const painting = (
+  <div>
+    <img src={data.url} alt={data.title} width="480" />
+    <h2>{data.title}</h2>
+    <p>
+      Автор: <a href="{data.автор.url}">{data.автор.tag}</a>
+    </p>
+    <p>Ціна: {data.ціна} кредитів</p>
+
+  </div>
+);
+
+ReactDOM.render(painting, document.querySelector(`#root`));
 
 
 
